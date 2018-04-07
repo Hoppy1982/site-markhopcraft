@@ -1,0 +1,19 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "item": "buy bread",
+      "complete": false
+    },
+    {
+      "id": 1,
+      "item": "buy milk",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "item": "buy eggs",
+      "complete": false
+    }
+  ]
+}

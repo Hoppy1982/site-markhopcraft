@@ -1,0 +1,15 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start_3000": "node portfolio/index.js",
+    "start_3001": "node subdomain-brain/server.js",
+    "start_all": "node portfolio/index.js & node subdomain-brain/server.js",
+    "start_all_v2": "npm run start_3000 | npm run start_3001"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

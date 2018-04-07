@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+portfolio/node_modules/*
+subdomain-brain/node_modules/*

@@ -1,0 +1,30 @@
+//- portfolio
+//- search-page.pug
+
+//- File description:
+//- search-page content.
+
+extends templates/site-layout.pug
+
+block prepend scripts
+  script(src='/bundled-javascripts/bundled-search-page.js')
+block append styles
+  link(rel='stylesheet', type='text/css', href='/stylesheets/search-page.css')
+  
+block pageContent
+    button(onclick='submitSearch()') Ajax
+    form(id='searchForm')
+      div
+        label(for='inputId') Enter item id (0-2)
+        input(type='number' id='inputId' placeholder="Enter a number..")
+      div
+        label(for='outstandingYes') Outstanding-yes
+        input(type='radio' id='outstandingYes' name='outstanding')
+        label(for='outstandingNo') Outstanding-no
+        input(type='radio' id='outstandingNo' name='outstanding')
+      div
+        label(for='completedYes') Completed-yes
+        input(type='radio' id='completedYes' name='completed')
+        label(for='completedNo') Completed-no
+        input(type='radio' id='completedNo' name='completed')
+      div(id='searchOutput')

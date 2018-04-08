@@ -1,0 +1,43 @@
+<h2 id="git-notes">Git notes</h2>
+<p><em>The files in your working directory can have one of four statuses:-</em></p>
+<ul>
+<li>Untracked</li>
+<li>Unmodified</li>
+<li>Modified</li>
+<li>Staged</li>
+</ul>
+<p><em>The rough idea is you choose the files that you want to be tracked with git then tinker with changes in a staging area (the index file) then finally commit your changes to the repo.</em></p>
+<ul>
+<li>Create a repo</li>
+<li>Specify files to track or ignore</li>
+<li>Add and remove files from the staging area until happy</li>
+<li>Commit your edits to a branch</li>
+<li>Push, pull, merge, fetch etc?</li>
+</ul>
+<p><em>Files in your project should either be tracked on listed in the .gitignore file. I haven't found a way to add files to .gitignore other than editing .gitignore in a text editor.</em></p>
+<p><em>If you move or rename a tracked file then <code>git rm &lt;oldfilename&gt;</code> then <code>git add &lt;newfilename&gt;</code> seems to work.</em></p>
+<h2 id="git-commands">Git commands</h2>
+<ul>
+<li><p><code>$ git init</code></p>
+<p><em>Creates a git repo in current working dir</em></p>
+</li>
+<li><p><code>$ git add &lt;filename&gt;</code></p>
+<p> <em>Starts tracking the file(s) &amp; adds the file(s) to the staged area, ready for next commit. Use this command every time before commits on the files you want to update on git, NOT just once after you initially create the file(s).</em></p>
+</li>
+<li><p><code>$ git rm &lt;filename&gt;</code></p>
+<p><em>Removes file(s) from the staging area and deletes the file. If you modified the file after adding it to the staging area you must use <code>git rm &lt;filename&gt; -f</code> to force removal. Use <code>git rm --cached &lt;filename&gt;</code> to keep the file locally in the working dir but have Git stop tracking it. Useful if you accidently added something to the staging area.</em></p>
+</li>
+<li><p><code>$ git status</code></p>
+<p><em>Shows the working tree status, --short gives consise output.</em></p>
+</li>
+<li><p><code>$ git commit</code></p>
+<p><em>Stores the contents of the index (staging area) in a new commit with a message. Use 'git commit -a' to automatically add changes from modified files. This is basically skipping the staging area.</em></p>
+</li>
+<li><p><code>$ git log</code></p>
+</li>
+</ul>
+<p><em>Lists commits with SHA-1 hash, author and timestamp. Use <code>git log --patch -2</code> to see the actual edits of the last 2 commits. The log command assumes the current branch but you can specify other bracnhes. <code>git log --stat</code> for summary of commit changes. <code>git log &gt; log.txt</code> to save the log.</em></p>
+<h2 id="code-1">Code 1</h2>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js"><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--js"><span>addNum</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--variable syntax--parameter syntax--function syntax--js"><span>a</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span>&nbsp;</span><span class="syntax--variable syntax--parameter syntax--function syntax--js"><span>b</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span>&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></div><div class="line"><span class="syntax--source syntax--js"><span>&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--js"><span>return</span></span><span>&nbsp;a&nbsp;</span><span class="syntax--keyword syntax--operator syntax--js"><span>+</span></span><span>&nbsp;b</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span></span></div></pre>
+<h2 id="code-2">Code 2</h2>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="syntax--source syntax--js"><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--js"><span>addNum</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--variable syntax--parameter syntax--function syntax--js"><span>a</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span>&nbsp;</span><span class="syntax--variable syntax--parameter syntax--function syntax--js"><span>b</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span>&nbsp;</span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></div><div class="line"><span class="syntax--source syntax--js"><span>&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--js"><span>return</span></span><span>&nbsp;a&nbsp;</span><span class="syntax--keyword syntax--operator syntax--js"><span>+</span></span><span>&nbsp;b</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--js"><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span></span></div></pre>

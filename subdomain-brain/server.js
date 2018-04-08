@@ -1,7 +1,7 @@
 //MODULES
-const express = require('express');
 const path = require('path');
-const serverConfig = require('./server-config.js');
+const express = require('express');
+const serverConfig = require( path.join(__dirname, '/server-config.js') );
 
 //CONFIG
 const PORT = serverConfig.PORT;

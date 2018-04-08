@@ -1,18 +1,20 @@
 //MODULES
 const express = require('express');
 const path = require('path');
+const serverConfig = require('./server-config.js');
 
 //CONFIG
-const PORT = 3001;
+const PORT = serverConfig.PORT;
+
+//DEFINE ROUTES
+const routes = require( path.join(__dirname, '/server/routes/index') );
 
 //SERVER SETUP
 const server = express();
+server.set( 'views', path.join(__dirname, 'app/views') );
+server.use('/', routes);
 
-//ROUTES
-server.get('/', function(req, res) {
-  res.sendFile(__dirname + '/home.html');
-});
 
 //LOG
 server.listen(PORT);
-console.log('Listening on: ' + PORT);
+console.log('Server listening on: ' + PORT);

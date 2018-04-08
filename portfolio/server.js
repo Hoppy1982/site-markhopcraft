@@ -4,14 +4,14 @@
 // File description:
 // Entry point to application, run this with node to start app.
 
-//--------CONFIG--------//
-var port = 3000;
-
 //--------MODULES-------//
 const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
 const path = require('path');
+
+//--------CONFIG--------//
+var port = 3000;
 
 //----DEFINE ROUTES-----//
 const routes = require( path.join(__dirname, '/server/routes/index') );
